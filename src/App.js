@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useQuery, gql } from "@apollo/client";
+import { useEffect } from "react";
+import { BarComponent } from "./Components/BarComponent";
+import "./CSS/App.css"
 
-function App() {
+export const TRACKS = gql`
+  query getTracks {
+    allPosts(count: 100) {
+      id
+      title
+      body
+      published
+      createdAt
+      author {
+        id
+        firstName
+        lastName
+        avatar
+      }
+    }
+  }
+`;
+
+export function App() {
+  const { loading, error, data } = useQuery(TRACKS);
+
+  useEffect(() => {
+    if (loading) return "Loadiing ...";
+
+    if (error) return `Error! ${error.message}`;
+
+    console.log("useEffect was called inside app.js");
+    console.log(data, "logging data from app js");
+  }, [data]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="title" >Number of posts per month in 2019</h1>
+      <BarComponent data={data && true ? data.allPosts : ""} />
+    </>
   );
 }
-
-export default App;
