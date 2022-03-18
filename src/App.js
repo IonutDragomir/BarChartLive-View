@@ -29,8 +29,6 @@ export function App() {
 
     if (error) return `Error! ${error.message}`;
 
-    console.log("useEffect was called inside app.js");
-    console.log(data, "logging data from app js");
   }, [data]);
 
   return (

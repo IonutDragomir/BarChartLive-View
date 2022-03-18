@@ -18,7 +18,6 @@ export function getNumberOfPosts(data) {
     let date = new Date(unix_timestamp);
     if (date.getFullYear() == 2019) {
       ++postPerMonth[date.getMonth()].posts;
-      console.log(date.getMonth(), "month");
     }
   });
 
