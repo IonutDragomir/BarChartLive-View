@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BarChartLive-View/static/css/main.a6db49ae.css",
-    "main.js": "/BarChartLive-View/static/js/main.8d28f9f5.js",
+    "main.js": "/BarChartLive-View/static/js/main.79fd7ec8.js",
     "index.html": "/BarChartLive-View/index.html",
     "main.a6db49ae.css.map": "/BarChartLive-View/static/css/main.a6db49ae.css.map",
-    "main.8d28f9f5.js.map": "/BarChartLive-View/static/js/main.8d28f9f5.js.map"
+    "main.79fd7ec8.js.map": "/BarChartLive-View/static/js/main.79fd7ec8.js.map"
   },
   "entrypoints": [
     "static/css/main.a6db49ae.css",
-    "static/js/main.8d28f9f5.js"
+    "static/js/main.79fd7ec8.js"
   ]
 }
